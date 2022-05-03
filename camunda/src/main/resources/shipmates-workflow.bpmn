@@ -15,14 +15,14 @@
     <bpmn:sequenceFlow id="Flow_0lrttr5" sourceRef="systemTask2" targetRef="userTask3" />
     <bpmn:sequenceFlow id="Flow_1wijiwp" sourceRef="userTask1" targetRef="systemTask2" />
     <bpmn:sequenceFlow id="Flow_0isq558" sourceRef="userTask3" targetRef="endEvent" />
-    <bpmn:userTask id="userTask1" name="User Task 1">
+    <bpmn:serviceTask id="userTask1" name="System Task 1" camunda:delegateExpression="${createStudent}">
       <bpmn:incoming>Flow_1dcycwl</bpmn:incoming>
       <bpmn:outgoing>Flow_1wijiwp</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:userTask id="userTask3" name="User Task 3">
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="userTask3" name="System Task 3" camunda:delegateExpression="${createStudent}">
       <bpmn:incoming>Flow_0lrttr5</bpmn:incoming>
       <bpmn:outgoing>Flow_0isq558</bpmn:outgoing>
-    </bpmn:userTask>
+    </bpmn:serviceTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="happyFlow1">
@@ -58,13 +58,12 @@
           <dc:Bounds x="795" y="142" width="51" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1wkn7xx_di" bpmnElement="userTask1">
+      <bpmndi:BPMNShape id="Activity_0ygc2to_di" bpmnElement="userTask1">
         <dc:Bounds x="280" y="77" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1cjkuz5_di" bpmnElement="userTask3">
+      <bpmndi:BPMNShape id="Activity_05ackv3_di" bpmnElement="userTask3">
         <dc:Bounds x="620" y="77" width="100" height="80" />
-        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
