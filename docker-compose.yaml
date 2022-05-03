@@ -1,0 +1,19 @@
+---
+version: '2'
+
+services:
+
+  postgres01:
+    container_name: postgres01
+    image: postgres:9.6.24-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=camunda
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - TZ=America/Toronto
+    volumes:
+      - ./data/postgres01:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    command: postgres
