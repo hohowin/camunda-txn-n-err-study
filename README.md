@@ -16,7 +16,7 @@ docker-compose up -d
 
 2\. Start the Student Applications by running `com.example.demo.DemoApplication`
 
-3\. Can verify by browsing `http://http://localhost:8080/api/v1/student`
+3\. Can verify by browsing `http://localhost:8080/api/v1/student`
 
 4\. Start Camunda by running `example.workflow.Application`
 
